@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabi Sands</title>
+</head>
+<body>
+    <H1>Welcome to Sabi Sands!</H1>
+    <p>I am index.html</p>
+    <form method='post' enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class="btn btn-primary">STYLE TRANSFORM</button>
+    </form>
+
+    <h2>Results! </h2>
+    {% if image.first_image %}
+        <img src="{{ media.first_image.url }}" alt="">
+        <img src="{{ media.second_image.url }}" alt="">
+    {% endif %}
+</body>
+</html>
