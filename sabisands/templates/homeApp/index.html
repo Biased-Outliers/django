@@ -8,17 +8,16 @@
 </head>
 <body>
     <H1>Welcome to Sabi Sands!</H1>
-    <p>I am index.html</p>
     <form method='post' enctype="multipart/form-data">
         {% csrf_token %}
         {{ form }}
         <button type="submit" class="btn btn-primary">STYLE TRANSFORM</button>
     </form>
 
-    <h2>Results! </h2>
-    {% if image.first_image %}
-        <img src="{{ media.first_image.url }}" alt="">
-        <img src="{{ media.second_image.url }}" alt="">
+    {% if image %}
+        <h2>Results! </h2>
+        <img src="{{ image.first_image.url }}" alt="Could not upload!" style="width:300px; height:auto">
+        <img src="{{ image.second_image.url }}" alt="Could not upload!" style="width:300px; height:auto">
     {% endif %}
 </body>
 </html>
